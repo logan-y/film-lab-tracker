@@ -7,7 +7,7 @@
 
 a {
     text-decoration: none;
-    color: white;
+    color:#D3D5D7;
     display: block;
     padding: 8px;
     background-color: rgb(84, 109, 190);
@@ -24,6 +24,7 @@ header {
     padding: 20px;
     background-color: rgb(84, 109, 190);
     margin-bottom: 30px;
+    color:#D3D5D7
 }
 
 h1 {
