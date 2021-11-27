@@ -1,0 +1,36 @@
+* {
+    padding: 10px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2B2D42;
+  }
+
+a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 8px;
+    background-color: rgb(84, 109, 190);
+}
+
+a:hover {
+    background-color: #465891;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(84, 109, 190);
+    margin-bottom: 30px;
+}
+
+h1 {
+    background-color: rgb(84, 109, 190);
+    font-size:45px;
+}
+
+div.center {
+    text-align: center;
+  }
