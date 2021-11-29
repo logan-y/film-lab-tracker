@@ -8,10 +8,13 @@ export default class Timer {
         control: root.querySelector(".timer__btn--control"),
         reset: root.querySelector(".timer__btn--reset")
       };
+      //reference parts of timer by this.el.minutes, etc.
   
-      this.interval = null;
-      this.remainingSeconds = 0;
+      this.interval = null;//interval fn in js to trigger timer
+      this.remainingSeconds = 0; //current remaining seconds in timer.
   
+
+      //start/stop
       this.el.control.addEventListener("click", () => {
         if (this.interval === null) {
           this.start();
@@ -20,6 +23,8 @@ export default class Timer {
         }
       });
   
+
+      //reset 
       this.el.reset.addEventListener("click", () => {
         const inputMinutes = prompt("Enter number of minutes:");
   
@@ -35,7 +40,7 @@ export default class Timer {
       const minutes = Math.floor(this.remainingSeconds / 60);
       const seconds = this.remainingSeconds % 60;
   
-      this.el.minutes.textContent = minutes.toString().padStart(2, "0");
+      this.el.minutes.textContent = minutes.toString().padStart(2, "0");//put two characters even if input is less than 10min
       this.el.seconds.textContent = seconds.toString().padStart(2, "0");
     }
   
