@@ -18,6 +18,34 @@
         </nav>
     </header>
     <main>
+        <h2>Log a new order!</h2>
+        <form id="order-form">
+            <input type="date" id="date"/>
+            <select id="time"></select><br>
+            <select id="client">
+                <option value="" disabled selected hidden>Client</option>
+                <option value=1>Bella</option>
+                <option value=2>Scotty</option>
+                <option value=3>Nana</option>
+                <option value=4>Katie</option>
+                <option value=5>Ansel</option>
+            </select><br>
+            <select id="film">
+                <option value="" disabled selected hidden>Choose a film type</option>
+                <option value=1>Kodak Tri-X</option>
+                <option value=2>Kodak T-Max</option>
+                <option value=3>Ilford HP5 400</option>
+                <option value=4>Ilford Delta 3200</option>
+                <option value=5>Ilford PanF 50</option>
+                <option value=6>Foma Fomapan 100 Classic</option>
+                <option value=7>Arista EDU Ultra 400</option>
+                <option value=8>Rollei Retro80S</option>
+                <option value=9>JCH Streetpan 400</option>
+            </select><br>
+            <label for="fnotes">Film Notes</label><br>
+            <input type="text" id="notes"><br>
+            <button>submit</button>
+        </form>
         <h2>Curent Orders</h2>
         <section id ="curr-orders"></section>
 
