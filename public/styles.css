@@ -1,28 +1,24 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+  }
   
-header {
+  header {
+    height: 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     background-color: rgb(84, 109, 190);
     margin-bottom: 30px;
-    color:#D3D5D7;
-    /* border-radius: 10%; */
-}
+    color:white;
+  }
   
-body {
-  background: #dddddd;
-  margin: 24px;
-}
 
 a {
-  text-decoration: none;
-  color:#D3D5D7;
-  display: block;
+  text-decoration: underline;
+  color:white;
   padding: 8px;
+  font-size: x-large;
   background-color: rgb(84, 109, 190);
 }
 
@@ -49,6 +45,7 @@ h3 {
 div.center {
   text-align: center;
 }
+
 .timer_container {
   border-color: rgb(60, 220, 20);
   border: solid;
@@ -56,7 +53,9 @@ div.center {
   display: flex;
   padding: 10px;
   justify-content: space-between;
+  margin-bottom: 45px;
 } 
+
 .timer {
   font-family: sans-serif;
   display: inline-block;
@@ -68,7 +67,6 @@ div.center {
 .timer__part {
   font-size: 30px;
   font-weight: bold;
-
 }
   
 .timer__btn {
@@ -85,7 +83,7 @@ div.center {
 .timer__btn--start {
   background: #40a369;
 }
-  
+
 .timer__btn--stop {
   background: #bb7a90;
 }
@@ -100,14 +98,20 @@ div.center {
   border-radius: 5px;
   box-shadow: 4px 4px #ccc;
 }
+
+#order-form {
+  display:flex;
+  justify-content: space-evenly;
+}
+
 .card {
-    box-shadow: 5px 5px 0 grey;
-    margin: 20px;
-    padding: 15px;
-    background-color: rgb(84, 109, 190);
-    text-align: center;
-    color: white;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  box-shadow: 5px 5px 0 grey;
+  margin: 10px;
+  padding: 5px;
+  background-color: rgb(84, 109, 190);
+  text-align: center;
+  color: white;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
 .payBtn {
@@ -123,7 +127,3 @@ div.center {
   background-color: #465891;
 }
 
-#order-form {
-  display:flex;
-  justify-content: space-evenly;
-}

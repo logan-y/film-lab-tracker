@@ -2,7 +2,6 @@ require('dotenv').config()
 const {CONNECTION_STRING} = process.env
 const Sequelize = require('sequelize')
 
-//app not going to production yet, only used locally so rejectUnauth = false is acceptable
 const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres', 
     dialectOptions: {
@@ -57,7 +56,7 @@ module.exports = {
         VALUES ('Bella', 'bellsnwhisles@gmail.com'), ('Scotty', 'oldogonthebayou@hotmail.com'), ('Nana', 'legendsneverdie@att.net'), ('Katie', 'katie@bluebayouofficial.com'), ('Ansel', 'natlparkangel@yellastone.com');
 
         INSERT INTO film_brands (brand_name)
-        VALUES ('kodak'), ('ilford'), ('rollei'), ('arista'), ('foma'), ('japancamerahunter');
+        VALUES ('Kodak'), ('Ilford'), ('Rollei'), ('Arista'), ('Foma'), ('Japancamerahunter');
 
         INSERT INTO film_speeds (speed_rating) 
         VALUES (50), (80), (100), (200), (400), (3200);
@@ -76,8 +75,8 @@ module.exports = {
         INSERT INTO orders (client_id, film_id, notes, date, paid)
         VALUES (1, 1, 'Pushed 2 stops.', '2021-06-16T12:30:00.000Z', true),
         (2, 2, 'Film was expired 4 years', '2021-06-16T12:30:00.000Z', true),
-        (3, 3, '', '2021-06-16T12:30:00.000Z', true),
-        (4, 4, 'Roll shot on canon AE-1', '2021-06-16T12:30:00.000Z', true);
+        (3, 3, 'N/A', '2021-06-16T12:30:00.000Z', true),
+        (4, 4, 'Roll shot on Canon AE-1', '2021-06-16T12:30:00.000Z', true);
             `).then(() => {
                 console.log('DB seeded!')
                 res.sendStatus(200)

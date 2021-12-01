@@ -159,7 +159,7 @@ function makeOrderCard(order) {
     <h3>Client: ${order.client_name}</h3>
     <h4>Email: ${order.email}
     <h4>Date Received: ${dateDisplayText}</h4>
-    <h4>Film delivered: ${order.film_name}</h4>
+    <h4>Film delivered: ${order.brand_name} ${order.film_name}</h4>
     <p>Notes: ${order.notes}</p>
     <h3>Paid? ${!order.paid  ? `<button class = "payBtn" onclick='markPaid(${order.order_id})'>Mark Paid</button>` : ' Yes'}</h3>
     </div>`
