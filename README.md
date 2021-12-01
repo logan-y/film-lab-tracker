@@ -12,7 +12,6 @@ This app is a tool to assist with my film development business.
 npm i
 npm start
 ```
-![tutorial_view](https://user-images.githubusercontent.com/89419167/144326806-2e67f5b0-cb3a-4160-81ac-df0d5aa57f55.png)
 
 3. Make a get request using the /seed endpoint in postman.
 4. Open the home.html file in your browser.
