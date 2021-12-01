@@ -54,7 +54,7 @@ module.exports = {
         );
 
         INSERT INTO clients (client_name, email)
-        VALUES ('bella', 'bellsnwhisles@gmail.com'), ('scotty', 'oldogonthebayou@hotmail.com'), ('nana', 'legendsneverdie@att.net'), ('katie', 'katie@bluebayouofficial.com'), ('ansel', 'natlparkangel@yellastone.com');
+        VALUES ('Bella', 'bellsnwhisles@gmail.com'), ('Scotty', 'oldogonthebayou@hotmail.com'), ('Nana', 'legendsneverdie@att.net'), ('Katie', 'katie@bluebayouofficial.com'), ('Ansel', 'natlparkangel@yellastone.com');
 
         INSERT INTO film_brands (brand_name)
         VALUES ('kodak'), ('ilford'), ('rollei'), ('arista'), ('foma'), ('japancamerahunter');
@@ -74,10 +74,10 @@ module.exports = {
         ('StreetPan', 6, 5);
 
         INSERT INTO orders (client_id, film_id, notes, date, paid)
-        VALUES (1, 1, 'pushed 2 stops', '2021-06-16T12:30:00.000Z', true),
-        (2, 2, 'expired 4 years', '2021-06-16T12:30:00.000Z', true),
+        VALUES (1, 1, 'Pushed 2 stops.', '2021-06-16T12:30:00.000Z', true),
+        (2, 2, 'Film was expired 4 years', '2021-06-16T12:30:00.000Z', true),
         (3, 3, '', '2021-06-16T12:30:00.000Z', true),
-        (4, 4, 'shot on canon AE-1', '2021-06-16T12:30:00.000Z', true);
+        (4, 4, 'Roll shot on canon AE-1', '2021-06-16T12:30:00.000Z', true);
             `).then(() => {
                 console.log('DB seeded!')
                 res.sendStatus(200)

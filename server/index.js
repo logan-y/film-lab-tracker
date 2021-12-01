@@ -8,7 +8,8 @@ const {seed} = require('./seed.js')
 const {
         getOrders,
         createOrder,
-        markPaid
+        markPaid,
+        orderPaid
         } = require('./controller.js');
 
 
@@ -20,6 +21,7 @@ app.post('/seed', seed)
 app.get('/orders', getOrders)
 app.post('/orders', createOrder)
 app.put('/orders', markPaid)
+app.get('/paidOrder', orderPaid)
 
 // app.get('/current', getCurrentOrders)
 // app.put('/complete', completeOrder)
