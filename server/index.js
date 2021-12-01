@@ -9,7 +9,6 @@ const {
         getOrders,
         createOrder,
         markPaid,
-        orderPaid
         } = require('./controller.js');
 
 
