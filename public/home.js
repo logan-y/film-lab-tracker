@@ -1,21 +1,20 @@
+///****TIMER****///
 
 class Timer {
-    constructor(root, label) {
-      root.innerHTML = Timer.getHTML(label);
-  
-      this.el = {
+  constructor(root, label) {
+    root.innerHTML = Timer.getHTML(label);
+    
+    this.el = {
         minutes: root.querySelector(".timer__part--minutes"),
         seconds: root.querySelector(".timer__part--seconds"),
         control: root.querySelector(".timer__btn--control"),
         reset: root.querySelector(".timer__btn--reset")
       };
-      //reference parts of timer by this.el.minutes, etc.
-  
-      this.interval = null;//interval fn in js to trigger timer
-      this.remainingSeconds = 0; //current remaining seconds in timer.
-  
 
-      //start/stop
+      
+      this.interval = null;
+      this.remainingSeconds = 0;
+      
       this.el.control.addEventListener("click", () => {
         if (this.interval === null) {
           this.start();
@@ -23,9 +22,8 @@ class Timer {
           this.stop();
         }
       });
-  
-
-      //reset 
+      
+      
       this.el.reset.addEventListener("click", () => {
         const inputMinutes = prompt("Enter number of minutes:");
   
@@ -36,15 +34,15 @@ class Timer {
         }
       });
     }
-  
+    
     updateInterfaceTime() {
       const minutes = Math.floor(this.remainingSeconds / 60);
       const seconds = this.remainingSeconds % 60;
-  
+      
       this.el.minutes.textContent = minutes.toString().padStart(2, "0");//put two characters even if input is less than 10min
       this.el.seconds.textContent = seconds.toString().padStart(2, "0");
     }
-  
+    
     updateInterfaceControls() {
       if (this.interval === null) {
         this.el.control.innerHTML = `<span class="material-icons">play_arrow</span>`;
@@ -59,49 +57,50 @@ class Timer {
   
     start() {
       if (this.remainingSeconds === 0) return;
-  
+      
       this.interval = setInterval(() => {
         this.remainingSeconds--;
         this.updateInterfaceTime();
-  
+        
         if (this.remainingSeconds === 0) {
           this.stop();
         }
       }, 1000);
-  
+      
       this.updateInterfaceControls();
     }
-  
+    
     stop() {
       clearInterval(this.interval);
-  
+      
       this.interval = null;
-  
+      
       this.updateInterfaceControls();
     }
   
     static getHTML(str) {
       return `
-              <span class="timer__part timer__part--minutes">00</span>
-              <span class="timer__part">:</span>
-              <span class="timer__part timer__part--seconds">00</span>
-              <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+      <span class="timer__part timer__part--minutes">00</span>
+      <span class="timer__part">:</span>
+      <span class="timer__part timer__part--seconds">00</span>
+      <button type="button" class="timer__btn timer__btn--control timer__btn--start">
                   <span class="material-icons">play_arrow</span>
               </button>
               <button type="button" class="timer__btn timer__btn--reset">
                   <span class="material-icons">timer</span>
-              </button><br>
-              <span class="timer__part">${str}</span>
+                  </button><br>
+                  <span class="timer__part">${str}</span>
           `;
-    }
-  }
-  
+        }
+      }
+///****CREATE TIMERS****///
 new Timer(document.getElementById("rinse"), " Rinse Timer");
 new Timer(document.getElementById("dev"), " Developer Timer");
 new Timer(document.getElementById("fixer"), " Fixer Timer");
 new Timer(document.getElementById("soak"), " Soak Timer");
 new Timer(document.getElementById("stbl"), " Stabilizer Timer");
 
+///****ORDER FORM****///
 const timePicker = document.querySelector('#time')
 const datePicker = document.querySelector('#date')
 const currentOrders = document.querySelector('#curr-orders')
@@ -149,7 +148,7 @@ function createDisplayDate(date) {
     const timeOfDay = reqTime.slice(-2)
     return `${reqDateDisplay} ${timeDisplay} ${timeOfDay}`
 }
-
+///****CREATE ORDER CARDS****///
 function makeOrderCard(order) {
     const dateDisplayText = createDisplayDate(order.date)
     console.log(order);
@@ -166,6 +165,7 @@ function makeOrderCard(order) {
     return orderElem
 }
 
+///****READ ORDERS****///
 function getOrders() {
     axios.get(baseURL)
         .then(res => {
@@ -182,6 +182,7 @@ function getOrders() {
     .catch(errCallback)    
 }
 
+///****CREATE ORDER****///
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -209,6 +210,7 @@ form.addEventListener('submit', (e) => {
         .catch(errCallback);
 })
 
+///****UPDATE ORDER****///
 function markPaid(id) {
     const selector = `#order-${id}`
     const elemToRemove = document.querySelector(selector)
@@ -216,12 +218,6 @@ function markPaid(id) {
     axios.put(baseURL, {order_id: id})
     .then(res => {
         const order = res.data[0]
-        console.log(`id in markPaidhomejs ${id}`)
-        // axios.get(`http://localhost:4004/paidOrder?id=${id}`)
-        //     .then(res => {
-        //         const paidOrder = res.data[0];
-        //         const newOrderElem = makeOrderCard(paidOrder)
-        //     })
         const newOrderElem = makeOrderCard(order)
         paidOrders.innerHTML += newOrderElem
         console.log(newOrderElem)

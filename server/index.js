@@ -21,8 +21,5 @@ app.post('/seed', seed)
 app.get('/orders', getOrders)
 app.post('/orders', createOrder)
 app.put('/orders', markPaid)
-app.get('/paidOrder', orderPaid)
 
-// app.get('/current', getCurrentOrders)
-// app.put('/complete', completeOrder)
 app.listen(SERVER_PORT, () => console.log(`Server running on ${SERVER_PORT}`));
