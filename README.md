@@ -13,7 +13,7 @@ npm i
 npm start
 ```
 
-3. Make a get request using the /seed endpoint in postman.
+3. Make a post request using the /seed endpoint in postman.
 4. Open the home.html file in your browser.
 
 ## Usage
