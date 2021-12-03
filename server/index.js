@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -10,11 +9,9 @@ const {
         createOrder,
         markPaid,
         } = require('./controller.js');
-
-
+        
 app.use(express.json());
 app.use(cors());
-
 
 app.post('/seed', seed)
 app.get('/orders', getOrders)
