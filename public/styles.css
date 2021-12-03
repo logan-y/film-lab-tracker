@@ -1,36 +1,129 @@
 * {
-    padding: 10px;
-    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #2B2D42;
   }
-
-a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding: 8px;
-    background-color: rgb(84, 109, 190);
-}
-
-a:hover {
-    background-color: #465891;
-}
-
-header {
+  
+  header {
+    height: 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     background-color: rgb(84, 109, 190);
     margin-bottom: 30px;
+    color:white;
+  }
+  
+
+a {
+  text-decoration: underline;
+  color:white;
+  padding: 8px;
+  font-size: x-large;
+  background-color: rgb(84, 109, 190);
 }
 
+a:hover {
+  background-color: #465891;
+}
+
+
 h1 {
-    background-color: rgb(84, 109, 190);
-    font-size:45px;
+  background-color: rgb(84, 109, 190);
+  font-size:45px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 45px;
+  text-decoration: underline;
+}
+
+h3 {
+  text-align: center;
 }
 
 div.center {
-    text-align: center;
-  }
+  text-align: center;
+}
+
+.timer_container {
+  border-color: rgb(60, 220, 20);
+  border: solid;
+  background-color: #465891;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  margin-bottom: 45px;
+} 
+
+.timer {
+  font-family: sans-serif;
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 30px;
+  background: white;
+}
+  
+.timer__part {
+  font-size: 30px;
+  font-weight: bold;
+}
+  
+.timer__btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 16px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background: rgb(84, 109, 190);
+  cursor: pointer;
+}
+
+.timer__btn--start {
+  background: #40a369;
+}
+
+.timer__btn--stop {
+  background: #bb7a90;
+}
+
+.box {
+  width: 180px;
+  height: 30px;
+  border: 1px solid #999;
+  font-size: 18px;
+  color: #465891;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 4px 4px #ccc;
+}
+
+#order-form {
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  box-shadow: 5px 5px 0 grey;
+  margin: 10px;
+  padding: 5px;
+  background-color: rgb(84, 109, 190);
+  text-align: center;
+  color: white;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.payBtn {
+  color: white;
+  background-color: rgb(84, 109, 190);
+  border: solid;
+  border-color: thistle;
+  width: 180px;
+  font-size: large;
+}
+
+.payBtn:hover {
+  background-color: #465891;
+}
+

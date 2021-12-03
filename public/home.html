@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Dev Timers</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>dog wearing goggles!</title>
 </head>
 <body>
     <header>
@@ -18,9 +20,52 @@
     </header>
 
     <main>
-        <h2>meat of the page</h2>
+        <div class = "timer_container">
+            <div class="timer" id = "rinse"></div><br>
+            <div class="timer" id = "dev"></div><br>
+            <div class="timer" id = "fixer"></div><br>
+            <div class="timer" id = "soak"></div><br>
+            <div class="timer" id = "stbl"></div><br>
+        </div>
+
+        <h2>Log a new order here</h2>
+        <form id="order-form">
+            <input type="date" class="box" id="date"/>
+            <select class="box"id="time"></select><br>
+            <select class="box" id="client">
+                <option value="" disabled selected hidden>Client</option>
+                <option value=1>Bella</option>
+                <option value=2>Scotty</option>
+                <option value=3>Nana</option>
+                <option value=4>Katie</option>
+                <option value=5>Ansel</option>
+            </select><br>
+            <select class="box" id="film">
+                <option value="" disabled selected hidden>Choose a film type</option>
+                <option value=1>Kodak Tri-X</option>
+                <option value=2>Kodak T-Max</option>
+                <option value=3>Ilford HP5 400</option>
+                <option value=4>Ilford Delta 3200</option>
+                <option value=5>Ilford PanF 50</option>
+                <option value=6>Foma Fomapan 100 Classic</option>
+                <option value=7>Arista EDU Ultra 400</option>
+                <option value=8>Rollei Retro80S</option>
+                <option value=9>JCH Streetpan 400</option>
+            </select><br>
+            <input type="text" class="box" id="notes" placeholder="Film Notes:"><br>
+            <button class="box">submit</button>
+        </form>
+
+        <section id ="curr-orders">
+            <h2>Curent Orders</h2>
+        </section>
+
+        <section id ="paid-orders">
+            <h2>Paid Orders</h2>
+        </section>
     </main>
 
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="home.js"></script>
 
 </body>
